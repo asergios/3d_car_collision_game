@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Project</title>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+    <!-- WebGL code -->
+
+    <link rel="stylesheet" href="css/final.css" type="text/css" />
+
+    <script type="text/javascript">
+        var vars = {};
+        var audio = new Audio('sounds/car_crash.mp3');
+        audio.play();
+        function getScore(){
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+                vars[key] = value;
+            });        
+            document.getElementById("score").innerHTML = vars['score'];
+
+        }
+        console.log(vars['mode'])
+        
+    </script>
+
+    </head>
+
+    <body onload="getScore();" style="background-image: url('images/backgroundDay.png')">
+        <div class="score-container">
+            <h1>Score</h1>
+            <div class="final-score" id="score"></div>
+            <div class="result">
+                <a class="play-again" href="game.html">Play again</a>
+                <a class="play-again" href="home.html">Main Menu</a>
+            </div>
+        </div>
+    </body>
+
+</html>
